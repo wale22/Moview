@@ -4,15 +4,15 @@ import {FontAwesome5} from '@expo/vector-icons'
 
 
 
-export default function Logo() {
+export default function Logo(props) {
   const img ='./reception/component/video.png'
   return (
     <View style={styles.logoCont}>
       <Text style={
-        {fontSize:30,color:'white', fontFamily:'courgette'
+        {fontSize:props.textSize,color:props.textColor, fontFamily:'courgette'
     }
       }>Morview</Text>
-      <FontAwesome5 name='video' color={'white'} size={30} style={{margin:3}}/>
+      <FontAwesome5 name='video' color={props.logoColor} size={props.logoSize} style={{margin:3}}/>
     </View>
   
   )

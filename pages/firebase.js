@@ -1,19 +1,5 @@
-import {initializeApp,} from 'firebase/app'
-import {
-    getFirestore,
-    collection,
-    getDoc,
-    getDocs,
-    addDoc,
-    doc,
-    deleteDoc,
-    onSnapshot,
-    query,
-    where,
-    orderBy
-
-} from 'firebase/firestore'
-
+import { initializeApp} from "firebase/app";
+import { addDoc, collection, doc, getDoc, getFirestore, where,setDoc, query, onSnapshot } from "firebase/firestore"; 
 
 const firebaseConfig = {
     apiKey: "AIzaSyDZgwd1A8jJX5wzG57mMUAYCq1L6Edzp2A",
@@ -23,47 +9,36 @@ const firebaseConfig = {
     messagingSenderId: "76176614191",
     appId: "1:76176614191:web:e1255d5b6df581c0b0f7da",
     measurementId: "G-K79LS3YCBZ"
-  };
-
-// initialization of a firebase db
-
-const app=initializeApp(firebaseConfig)
-
-// creating of a firestore db
-
-const db=getFirestore(app)
-
-// collection reference
-
-const colRef= collection(db,'Moview')
+};
 
 
-// getting docs
 
 
-getDocs(colRef)
-.then((e)=>{console.log(e)})
-.catch()
+export const app=initializeApp(firebaseConfig)
 
-// adding and deleting new doc
-addDoc(colRef,{})
-.then()
-.catch
+export const db=getFirestore(app)
 
-// deleting a doc
-const ref=doc(db,'Moview', id)
-deleteDoc(ref)
-.then()
-.catch()
-
-// using snapshot to get updated
-
-onSnapshot(colRef,(e)=>{
-
-})
+ export const usrRef=collection(db,'Users')
 
 
-// query to filter out un wanted data or get specific datas
+
+export const addUser=(user)=>{
+    let res=''
+    setDoc(doc(usrRef, user.email),{
+        Name:user.name,
+        Password:user.password
+    } )
+    .then(
+        res='success'
+    )
+    .catch((e)=>res='error')
+
+    return res
+}
 
 
-data= query(colRef, where('key','==', 'constraint'), orderBy('key', 'order(ascending or descending)'))
+
+export const authUser=(user)=>{
+  
+}
+ 

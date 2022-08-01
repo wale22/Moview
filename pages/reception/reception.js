@@ -15,7 +15,8 @@ export default function Reception ({navigation}) {
             <View 
             style={styles.cont}>
                 <View>
-                    <Logo/>
+                    <Logo textColor={'white'} logoColor={'white'} textSize={30}  logoSize={30}/>
+
                     <Text style={styles.convince}>join others to express the way you feel about the movies you watch</Text>
                 </View>
             
@@ -23,10 +24,10 @@ export default function Reception ({navigation}) {
                <Image source={require((url2))} style={styles.img} />
                 
 
-                <TouchableOpacity style={styles.btn} onPress={()=> navigation.navigate('regAuth')}>
+                <TouchableOpacity style={styles.btn} onPress={()=> navigation.navigate('reg')}>
     
                     <Text style={{color:"#1659cd", fontSize:20, textAlign:'center'}} >
-                    GET STARTED
+                        CONTINUE
                     </Text>
                     
                 </TouchableOpacity>

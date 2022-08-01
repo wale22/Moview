@@ -12,7 +12,7 @@ export const styles=StyleSheet.create({
     title:{
       fontSize:20,
       color:'#1851b4',
-      paddingBottom:2
+      marginBottom:4,
     },
   
     fieldg:{
@@ -30,9 +30,14 @@ export const styles=StyleSheet.create({
       },
       shadowOpacity: 0.16,
       shadowRadius: 6.68,
-  
+      marginBottom:5,
       elevation: 3,
       fontSize:18
+    },
+
+    errorText:{
+      color:'red',
+      marginBottom:5
     },
 
     btn:{
@@ -40,7 +45,6 @@ export const styles=StyleSheet.create({
       backgroundColor:'#1851b4',
       color:'white',
       padding:14,
-      marginBottom:36,
       marginTop:18,
       borderRadius:5
   

@@ -3,14 +3,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const regAuthslice= createSlice({
     name: 'regAuth',
-    initialState:{value:'reg'},
+    initialState:{value:{} ,bol:''},
     reducers:{
-        switchs:(state,action)=>{
+        update:(state,action)=>{
             state.value=action.payload
+        },
+
+        exist:(state,action)=>{
+            state.bol=action.payload
         }
     }
 })
 
 
-export const {switchs} = regAuthslice.actions;
+export const {update,exist} = regAuthslice.actions;
 export default regAuthslice.reducer

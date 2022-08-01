@@ -5,7 +5,7 @@ export default function KeyboardWrapper({children}) {
   return (
     <KeyboardAvoidingView>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss()}>
-            <ScrollView>
+            <ScrollView keyboardShouldPersistTaps={'always'}>
                 {children}
             </ScrollView>
         </TouchableWithoutFeedback>
